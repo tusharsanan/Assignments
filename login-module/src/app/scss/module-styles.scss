@@ -1,0 +1,17 @@
+@import './components/generic';
+@import './helpers/variables';
+@import './helpers/mixins';
+@import './helpers/partials';
+
+.margin-right {
+  margin-right: $small-margin-right;
+}
+
+.form-wrapper {
+  width: 50%;
+  @extend %center-align;
+}
+
+h1 {
+    color: $base-color;;
+}
