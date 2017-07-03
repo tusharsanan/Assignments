@@ -33,7 +33,7 @@ const appRoutes:Routes = [
     LoginFormModule,
     FormsModule,
     HttpModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]

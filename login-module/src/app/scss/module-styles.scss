@@ -10,8 +10,11 @@
 .form-wrapper {
   width: 50%;
   @extend %center-align;
+  @media screen and (max-width:$break-small) {
+    width: 100%;
+  }
 }
 
-h1 {
-    color: $base-color;;
+h1, h2 {
+    color: $base-color;
 }

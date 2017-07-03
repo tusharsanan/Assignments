@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
-
 @NgModule({
     imports: [ ReactiveFormsModule, CommonModule],
     declarations: [LoginFormComponent, DashboardComponent],

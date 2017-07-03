@@ -40,8 +40,11 @@ h1 {
 
 .form-wrapper {
   width: 50%; }
+  @media screen and (max-width: 570px) {
+    .form-wrapper {
+      width: 100%; } }
 
-h1 {
+h1, h2 {
   color: #00a1de; }
 
 /*# sourceMappingURL=module-styles.css.map */

@@ -1,7 +1,5 @@
-export class loginUser {
+export class AddressFields {
     constructor(
-        public email: string,
-        public password: string,
         public buildingName: string,
         public roomNumber: number,
         public city: string,
