@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="form-wrapper" [hidden]="submitted">
+        <h1>Please enter the address details:</h1>
+        <form [formGroup]="addressForm" (ngSubmit)="confirmAddress()">
+          <!--  <div *ngIf= "loginFail" class="alert alert-danger">User Id or Password is invalid!</div> -->
+                <div class="form-group">
+                    <label *ngIf="!addressFormErrors.buildingName" for="buildingName">Building name</label>
+                    <div *ngIf="addressFormErrors.buildingName" class="alert alert-danger">
+                    {{ addressFormErrors.buildingName }}
+                    </div>
+                    <input type="text" id="buildingName" class="form-control" formControlName="buildingName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <div *ngIf="addressFormErrors.roomNumber" class="alert alert-danger">
+                    {{ addressFormErrors.roomNumber }}
+                    </div>
+                    <input type="number" id="roomNumber" class="form-control" formControlName="roomNumber" />
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <div *ngIf="addressFormErrors.city" class="alert alert-danger">
+                    {{ addressFormErrors.city }}
+                    </div>
+                    <input id="city" class="form-control" type="text" formControlName="city" />
+                </div>
+
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <div *ngIf="addressFormErrors.state" class="alert alert-danger">
+                    {{ addressFormErrors.state }}
+                    </div>
+                    <input type="text" class="form-control" id="state" formControlName="state" />
+                </div>
+
+                <div class="form-group">
+                    <label for="pin">PIN</label>
+                    <div *ngIf="addressFormErrors.pin" class="alert alert-danger">
+                    {{ addressFormErrors.pin }}
+                    </div>
+                    <input type="number" class="form-control" id="pin" formControlName="pin" />
+                </div>
+                <button type="submit" class="btn margin-right btn-default" [disabled]="!addressForm.valid">Submit</button>
+                <button type="button" (click)="resetAddressForm()" class="btn btn-default">Reset</button>
+        </form>
+    </div>
+</div>

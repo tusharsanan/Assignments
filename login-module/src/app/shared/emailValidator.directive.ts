@@ -8,6 +8,6 @@ export function emailValidator(nameRe: RegExp): ValidatorFn {
   return (control: AbstractControl): {[key: string]: any} => {
     const name = control.value;
     const no = nameRe.test(name);
-    return no ? null : {'forbiddenName': {name}} ;
-  };
+    return no ? null : {'forbiddenName': {name}}
+  }
 }
