@@ -5,7 +5,7 @@ import { SuccessComponent } from './success.component'
 @NgModule({
     imports: [ SuccessModule ],
     declarations: [SuccessComponent],
-    exports: [SuccessComponent
+    exports: [SuccessComponent]
 })
 
 export class SuccessModule {}
