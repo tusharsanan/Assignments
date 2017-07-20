@@ -1,7 +1,7 @@
 <div class="container">
     <div class="form-wrapper" [hidden]="submitted">
         <h1>Please enter the address details:</h1>
-        <form [formGroup]="addressForm" (ngSubmit)="confirmAddress()">
+        <form [formGroup]="addressForm" *ngIf="active" (ngSubmit)="confirmAddress()">
           <!--  <div *ngIf= "loginFail" class="alert alert-danger">User Id or Password is invalid!</div> -->
                 <div class="form-group">
                     <label *ngIf="!addressFormErrors.buildingName" for="buildingName">Building name</label>
@@ -42,7 +42,7 @@
                     </div>
                     <input type="number" class="form-control" id="pin" formControlName="pin" />
                 </div>
-                <button type="submit" class="btn margin-right btn-default" [disabled]="!addressForm.valid">Submit</button>
+                <button type="submit" class="btn margin-right btn-default">Submit</button>
                 <button type="button" (click)="resetAddressForm()" class="btn btn-default">Reset</button>
         </form>
     </div>

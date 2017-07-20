@@ -1,7 +1,7 @@
 <div class="container">
     <div class="form-wrapper" [hidden]="submitted">
         <h1>Log in</h1>
-        <alert *ngIf="loginForm.valid"></alert>
+        <alert *ngIf="!formErrors.email && !formErrors.password"></alert>
         <form [formGroup]="loginForm" *ngIf="active" (ngSubmit)="loginUser($event)">
             <div *ngIf= "loginFail" class="alert alert-danger">User Id or Password is invalid!</div>
             <div class="form-group">
@@ -20,7 +20,7 @@
                 <input type="password" id="password" class="form-control" formControlName="password" required />
             </div>
 
-            <button type="submit" class="btn margin-right btn-default" [disabled]="!loginForm.valid">Login</button>
+            <button type="submit" class="btn margin-right btn-default">Login</button>
             <button type="button" (click)="resetForm()" class="btn btn-default">Cancel</button>
         </form>
     </div>

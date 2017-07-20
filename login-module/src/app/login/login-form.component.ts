@@ -34,7 +34,6 @@ constructor(private fb: FormBuilder,private route: ActivatedRoute, private route
         var password = e.target.elements[1].value;
 
      // Calling the authentication service to validate a user
-
         this.authenticationService.login(email, password)
             .subscribe(
                 data => {
@@ -47,8 +46,6 @@ constructor(private fb: FormBuilder,private route: ActivatedRoute, private route
         }
         active = true;
         loginForm: FormGroup;
-                
-
         ngOnInit() {
             this.buildForm();
         }

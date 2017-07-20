@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class AddressComponent implements OnInit {
   address = new AddressFields('',null,'','',null);
   addressForm: FormGroup;
+  active = true
   registerFail = false;
   constructor(private user: UserService, private fb: FormBuilder, private router: Router){}
   ngOnInit() {

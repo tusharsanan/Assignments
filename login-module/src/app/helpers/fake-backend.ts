@@ -17,7 +17,6 @@ let users: any[] = [
                         return user.email === params.email && user.password === params.password;
                     });
                     
-                    //let duplicateUser = users.filter(user => {return user.email === params.email; }).length;
                     if(filteredUsers.length) {
                         // if login details are valid return 200 OK with user details
                         let user = filteredUsers[0];
@@ -28,10 +27,12 @@ let users: any[] = [
                                 password: user.password
                             }
                         })));
-                      }                     
-                    /* else if(duplicateUser) {
-                        return connection.mockError(new Error('"Email "' + params.email + '"is already taken'));
-                     } */
+                      }
+
+                     else if (params.email == "" || params.password== "") {
+                        return connection.mockError(new Error('Username and password cannot be blank'));
+                    }
+
                      else {
                           // else return 400 bad request
                         connection.mockError(new Error('Username or password is incorrect'));
@@ -40,7 +41,7 @@ let users: any[] = [
                     }
             }, 500);
         });
-            return new Http(backend, options);
+        return new Http(backend, options);
         };
         export let fakeBackendProvider = {
             provide: Http,
